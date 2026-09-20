@@ -1,0 +1,80 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("unsai.jpg") center / cover no-repeat;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+  background-color: #f0c5ce;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+legend {
+  background-color: #f0ee6e;
+  padding: 12px;
+  border-radius: 9px;
+}
+
+button {
+  padding: 10px 30px;
+  background-color: #53f36b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  background-color: #b9efdc;
+}
+
+button:hover {
+  background-color: #1fa676;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #2ccb93;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+
+input:disabled,
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+
+    <h1>Sistema de Gestión Académica</h1>
+    <form action="/procesar" method="POST" class="form-container">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" required placeholder="Escribe tus apellidos" name="apellidos" id="apellidos">
+                <br>
+                <br>
+                <label for="nombres">Nombres:</label>
+                <input type="text" required placeholder="Escribe tus nombres" name="nombres" id="nombres">
+                <br>
+                <br>
+                <label for="nacimiento">Fecha de Nacimiento: </label>
+                <input type="date" id="nacimiento" name="nacimiento" required min="1950-01-01" max="2010-12-31">
+                
+            </div> 
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos Académicos</legend>
+            <div class="form-group">
+                <label for="codigo" class="form-label">Código de estudiante:</label>
+                <input type="text" id="codigo" name="codigo" required maxlength="8" title="Ingrese exactamente 8 dígitos numéricos" pattern="[0-9]{8}">
+                <br>
+                <br>
+                <label for="sede">Sede:</label>
+                <select name="sede" id="sede">
+                    <option value="">- - - - -  Seleccione Sede - - - - - -</option>
+                    <option value="BIOMÉDICAS">BIOMÉDICAS</option>
+                    <option value="SOCIALES">SOCIALES</option>
+                    <option value="INGENIERÍAS">INGENIERÍAS</option>
+                </select>
+                <br>
+                <br>
+                <label for="escuela">Escuela/Programa:</label>
+                <select name="escuela" id="escuela">
+                    <option value="">- - - - - Seleccione Carrera - - - - - -</option>
+                    <option value="Agronomía">Agronomía</option>
+                    <option value="Ingeniería Pesquera">Ingeniería Pesquera</option>
+                    <option value="Ciencias de la Nutrición">Ciencias de la Nutrición</option>
+                    <option value="Biología">Biología</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Enfermería">Enfermería</option>
+                    <option value="Ingeniería Sanitaria">Ingeniería Sanitaria</option>
+                    <option value="Ingeniería Mecánica">Ingeniería Mecánica</option>
+                    <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                    <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                    <option value="Ingeniería de Materiales">Ingeniería de Materiales</option>
+                    <option value="Ingeniería de Industrias Alimentarias">Ingeniería de Industrias Alimentarias</option>
+                    <option value="Ingeniería Química">Ingeniería Química</option>
+                    <option value="Ingeniería Metalúrgica">Ingeniería Metalúrgica</option>
+                    <option value="Ingeniería Civil">Ingeniería Civil</option>
+                    <option value="Ingeniería de Minas">Ingeniería de Minas</option>
+                    <option value="Ingeniería Geológica">Ingeniería Geológica</option>
+                    <option value="Ingeniería Geofísica">Ingeniería Geofísica</option>
+                    <option value="Química">Química</option>
+                    <option value="Matemáticas">Matemáticas</option>
+                    <option value="Física">Física</option>
+                    <option value="Arquitectura">Arquitectura</option>
+                    <option value="Ingeniería Electrónica">Ingeniería Electrónica</option>
+                    <option value="Ingeniería de Telecomunicaciones">Ingeniería de Telecomunicaciones</option>
+                    <option value="Ingeniería Eléctrica">Ingeniería Eléctrica</option>
+                    <option value="Ciencia de la Computación">Ciencia de la Computación</option>
+                    <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                    <option value="Ciencias de la Comunicación">Ciencias de la Comunicación</option>
+                    <option value="Relaciones Industriales">Relaciones Industriales</option>
+                    <option value="Psicología">Psicología</option>
+                    <option value="Literatura y Lingüística">Literatura y Lingüística</option>
+                    <option value="Filosofía">Filosofía</option>
+                    <option value="Artes">Artes</option>
+                    <option value="Economía">Economía</option>
+                    <option value="Derecho">Derecho</option>
+                    <option value="Turismo y Hotelería">Turismo y Hotelería</option>
+                    <option value="Antropología">Antropología</option>
+                    <option value="Trabajo Social">Trabajo Social</option>
+                    <option value="Sociología">Sociología</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Finanzas">Finanzas</option>
+                    <option value="Contabilidad">Contabilidad</option>
+                    <option value="Gestión">Gestión</option>
+                    <option value="Banca y Seguros">Banca y Seguros</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Administración">Administración</option>
+                </select>
+                <br>
+                <br>
+                <label>Turno:</label>
+                <input type="radio" name="mañana" id="mañana">Mañana
+                <input type="radio" name="tarde" id="tarde">Tarde
+                <input type="radio" name="noche" id="noche">Noche
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Información de la Cuenta</legend>
+            <div class="form-group">
+                <label for="email" class="form-label">Correo Institucional:</label>
+                <input type="email" id="email" name="email" class="form-input"required placeholder="usuario@universidad.edu.pe" >
+                <br>
+                <br>
+                <label for="password">Contraseña: </label>
+                <input type="password" id="clave" name="clave" required minlength="8" pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}" title="Mínimo 8 caracteres, una mayúscula y un número">
+            </div>
+        </fieldset>
+
+        <input type="checkbox" name="tyc" id="tyc" required>
+            <label for="tyc">Acepto los</label>
+            <a href="terminos&condiciones.html" target="_blank" title="Ver Términos y Condiciones">Términos y Condiciones</a>
+            <br>
+            <br>
+            <button type="submit">Enviar</button>
+        
+
+
+</form>
+
+</body>
+</html>
