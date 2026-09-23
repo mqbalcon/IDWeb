@@ -1,0 +1,35 @@
+/* CSS Nativo Grid Mobile First */
+.card-grid {
+display: grid;
+grid-template-columns: 1fr; /* Mobile */
+gap: 1.5rem;
+}
+@media (min-width: 768px) {
+.card-grid {
+grid-template-columns: repeat(2, 1fr); /* Tablet */
+}
+}
+@media (min-width: 1024px) {
+.card-grid {
+grid-template-columns: repeat(3, 1fr); /* Desktop */
+}
+}
+<!-- Integración de Navbar de Bootstrap 5 -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">Portal Académico</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-
+bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+<span></button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Cursos</a></li>
+</ul>
+</div>
+</div>
+</nav>
