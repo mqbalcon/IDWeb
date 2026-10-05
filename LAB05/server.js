@@ -10,7 +10,7 @@ const TIPOS = {
 const server = http.createServer((req, res) => {
   console.log(`Petición recibida: ${req.method} ${req.url}`);
 
-  // ---------- 3a. GET /api/estudiantes ----------
+  // GET
   if (req.url === '/api/estudiantes' && req.method === 'GET') {
     fs.readFile(DATA_FILE, 'utf8', (err, data) => {
       if (err) {
@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
         res.end(data);
       }
     });
-  // ---------- 3b. POST /api/estudiantes ----------
+  //POST
   } else if (req.url === '/api/estudiantes' && req.method === 'POST') {
     let body = '';
 
@@ -43,7 +43,6 @@ const server = http.createServer((req, res) => {
       });
     });
 
-  // ---------- Punto 2: archivos estáticos desde /public ----------
   } else if (req.method === 'GET' && !req.url.startsWith('/api/')) {
     const archivo = req.url === '/' ? '/index.html' : req.url;
     const filePath = path.join(__dirname, 'public', archivo);
@@ -59,7 +58,6 @@ const server = http.createServer((req, res) => {
       }
     });
 
-  // ---------- 3c. Rutas no existentes (404) ----------
   } else {
     res.writeHead(404, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ message: 'Recurso no encontrado' }));
