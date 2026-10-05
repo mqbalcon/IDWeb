@@ -1,12 +1,16 @@
 {
   "name": "lab05",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Servidor backend estático y API básica de consultas",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Martha Quispe Balcon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
